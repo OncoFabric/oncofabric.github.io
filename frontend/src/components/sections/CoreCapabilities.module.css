@@ -1,0 +1,103 @@
+.coreCapabilities {
+  padding: 120px 0;
+  background: var(--grey-50);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.sectionTitle {
+  font-size: 48px;
+  color: var(--grey-900);
+  margin-bottom: 16px;
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  color: var(--grey-600);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.capabilitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.capabilityCard {
+  background: var(--white);
+  border: 1px solid var(--grey-200);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s ease;
+}
+
+.capabilityCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.capabilityIcon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--teal-deep), var(--teal-medium));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.capabilityIcon svg {
+  width: 28px;
+  height: 28px;
+  color: white;
+}
+
+.capabilityCard h3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--grey-900);
+  margin-bottom: 12px;
+}
+
+.capabilityCard p {
+  font-size: 15px;
+  color: var(--grey-600);
+  line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+  .capabilitiesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 32px;
+  }
+
+  .capabilitiesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.animateOnScroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animateOnScroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animateOnScroll.visible:hover {
+  transform: translateY(-4px);
+}

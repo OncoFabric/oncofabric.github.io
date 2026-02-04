@@ -1,0 +1,19 @@
+:root {
+  --teal-deep: #0a3d3d;
+  --teal-medium: #115e59;
+  --teal-light: #14b8a6;
+  --pink-primary: #ec4899;
+  --pink-light: #f472b6;
+  --blue-bright: #06b6d4;
+  --blue-light: #22d3ee;
+  --white: #ffffff;
+  --grey-50: #f8fafc;
+  --grey-100: #f1f5f9;
+  --grey-200: #e2e8f0;
+  --grey-300: #cbd5e1;
+  --grey-500: #64748b;
+  --grey-600: #475569;
+  --grey-700: #334155;
+  --grey-800: #1e293b;
+  --grey-900: #0f172a;
+}

@@ -1,0 +1,31 @@
+.cta {
+  padding: 120px 0;
+  background: linear-gradient(135deg, var(--teal-deep) 0%, #062626 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaPattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image:
+    radial-gradient(circle at 30% 50%, var(--pink-primary) 0%, transparent 50%),
+    radial-gradient(circle at 70% 50%, var(--blue-bright) 0%, transparent 50%);
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 1;
+}
+
+.cta h2 {
+  font-size: 48px;
+  color: var(--white);
+  margin-bottom: 40px;
+}
+
+.cta h2 span {
+  font-style: italic;
+}

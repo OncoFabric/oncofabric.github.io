@@ -1,0 +1,124 @@
+.problem {
+  padding: 120px 0;
+  background: var(--white);
+}
+
+.sectionTitle {
+  font-size: 48px;
+  color: var(--grey-900);
+  margin-bottom: 16px;
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  color: var(--grey-600);
+  max-width: 600px;
+}
+
+.problemGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 64px;
+}
+
+.problemCard {
+  background: var(--grey-50);
+  border: 1px solid var(--grey-200);
+  border-radius: 16px;
+  padding: 32px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.problemCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.problemIcon {
+  width: 56px;
+  height: 56px;
+  background: var(--white);
+  border: 1px solid var(--grey-200);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.problemIcon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--grey-600);
+}
+
+.problemIcon::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 20px;
+  height: 20px;
+  background: #ef4444;
+  border-radius: 50%;
+}
+
+.problemIcon::before {
+  content: '\00D7';
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 20px;
+  height: 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.problemCard h3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--grey-900);
+  margin-bottom: 12px;
+}
+
+.problemCard p {
+  font-size: 15px;
+  color: var(--grey-600);
+  line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+  .problemGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 32px;
+  }
+}
+
+.animateOnScroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animateOnScroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animateOnScroll.visible:hover {
+  transform: translateY(-4px);
+}

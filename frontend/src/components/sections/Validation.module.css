@@ -1,0 +1,59 @@
+.validation {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--teal-deep) 0%, #062626 100%);
+  position: relative;
+}
+
+.validationContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.validationText h2 {
+  font-size: 40px;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.validationText p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+.validationBadges {
+  display: flex;
+  gap: 24px;
+}
+
+.validationBadge {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px 28px;
+  text-align: center;
+}
+
+.validationBadgeLabel {
+  font-size: 12px;
+  color: var(--teal-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.validationBadgeValue {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .validationContent {
+    flex-direction: column;
+    text-align: center;
+  }
+}

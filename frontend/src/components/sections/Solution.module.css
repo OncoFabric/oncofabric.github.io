@@ -1,0 +1,287 @@
+.solution {
+  padding: 120px 0;
+  background: var(--grey-50);
+  position: relative;
+}
+
+.solutionHeader {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 80px;
+}
+
+.sectionTitle {
+  font-size: 48px;
+  color: var(--grey-900);
+  margin-bottom: 16px;
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  color: var(--grey-600);
+}
+
+.solutionFlow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.flowInput,
+.flowOutput {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.flowItem {
+  background: var(--white);
+  border: 1px solid var(--grey-200);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--grey-600);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.flowItem svg {
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+}
+
+.flowInput .flowItem {
+  border-left: 3px solid var(--grey-300);
+  opacity: 0.7;
+}
+
+.flowOutput .flowItem {
+  border-left: 3px solid var(--teal-medium);
+  background: linear-gradient(90deg, rgba(17, 94, 89, 0.05), transparent);
+}
+
+.flowCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.flowLogo {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, var(--teal-deep), var(--teal-medium));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 60px rgba(10, 61, 61, 0.3);
+  position: relative;
+}
+
+.flowLogo::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border: 2px dashed var(--teal-light);
+  border-radius: 50%;
+  animation: spin 20s linear infinite;
+}
+
+.flowArrows {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  color: var(--grey-300);
+}
+
+.solutionCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.solutionCard {
+  background: var(--white);
+  border: 1px solid var(--grey-200);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.solutionCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.solutionCard.minds::before {
+  background: linear-gradient(90deg, var(--blue-bright), var(--teal-light));
+}
+
+.solutionCard.honeybee::before {
+  background: linear-gradient(90deg, var(--pink-primary), var(--pink-light));
+}
+
+.solutionCard.clever::before {
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+}
+
+.solutionCardNumber {
+  font-size: 64px;
+  font-family: 'Fraunces', serif;
+  color: var(--grey-100);
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+.solutionCardTag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.solutionCard.minds .solutionCardTag {
+  background: rgba(6, 182, 212, 0.1);
+  color: var(--teal-medium);
+}
+
+.solutionCard.honeybee .solutionCardTag {
+  background: rgba(236, 72, 153, 0.1);
+  color: var(--pink-primary);
+}
+
+.solutionCard.clever .solutionCardTag {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.solutionCard h3 {
+  font-size: 28px;
+  color: var(--grey-900);
+  margin-bottom: 16px;
+}
+
+.solutionCard > p {
+  font-size: 15px;
+  color: var(--grey-600);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.benefitBox {
+  background: var(--grey-50);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 24px;
+}
+
+.benefitLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--teal-medium);
+  margin-bottom: 8px;
+}
+
+.benefitText {
+  font-size: 15px;
+  color: var(--grey-800);
+  font-weight: 500;
+}
+
+.cardLinks {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--grey-600);
+  padding: 8px 16px;
+  background: var(--grey-100);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.cardLink:hover {
+  background: var(--teal-deep);
+  color: var(--white);
+}
+
+.cardLink svg {
+  width: 16px;
+  height: 16px;
+}
+
+.comingSoon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--grey-500);
+  margin-top: 24px;
+  font-style: italic;
+}
+
+.comingSoon svg {
+  width: 14px;
+  height: 14px;
+}
+
+@media (max-width: 1200px) {
+  .solutionCards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .solutionFlow {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .flowInput,
+  .flowOutput {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animateOnScroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animateOnScroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

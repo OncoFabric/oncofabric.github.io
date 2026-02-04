@@ -1,0 +1,21 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logoIcon {
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  color: var(--teal-deep);
+  letter-spacing: -0.5px;
+}
+
+.logoText.light {
+  color: var(--white);
+}

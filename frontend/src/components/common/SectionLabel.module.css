@@ -1,0 +1,18 @@
+.sectionLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--pink-primary);
+  margin-bottom: 16px;
+}
+
+.sectionLabel::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: var(--pink-primary);
+}

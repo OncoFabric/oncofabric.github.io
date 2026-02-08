@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OncoFabric — Coming Soon</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --charcoal: #1a1a1a;
+    --teal: #0d7377;
+    --teal-glow: rgba(13,115,119,0.10);
+    --cream: #f7f5f0;
+    --cream-dark: #edeae3;
+    --text-secondary: #5a5550;
+    --text-tertiary: #8a857e;
+    --white: #ffffff;
+    --border: rgba(26,26,26,0.08);
+    --coral: #e04a5e;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'DM Sans', -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--charcoal);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ===== LAYOUT: single screen ===== */
+  .page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 36px 40px 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  /* ===== TOP: Logo + Headline ===== */
+  .top {
+    text-align: center;
+  }
+  .logo {
+    font-size: 24px;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+  }
+  .logo .bold { font-weight: 700; }
+  .logo .light { font-weight: 300; }
+  .logo .cite {
+    color: var(--teal);
+    font-family: var(--mono);
+    font-size: 12px;
+    vertical-align: super;
+    font-weight: 600;
+  }
+  .headline {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .headline .light { font-weight: 300; color: var(--text-secondary); }
+  .subtitle {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ===== MIDDLE: Challenge + Approach ===== */
+  .middle {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* Challenge */
+  .section-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .section-label .dash { width: 16px; height: 2px; border-radius: 1px; }
+  .section-label.coral { color: var(--coral); }
+  .section-label.coral .dash { background: var(--coral); }
+  .section-label.teal { color: var(--teal); }
+  .section-label.teal .dash { background: var(--teal); }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 16px;
+  }
+  .card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    position: relative;
+    background: var(--white);
+    color: var(--charcoal);
+  }
+  .card-icon svg { width: 16px; height: 16px; }
+  .card-icon .badge-x {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--coral);
+    color: white;
+    font-size: 8px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card h3 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .card p {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  /* Approach */
+  .approach-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .flow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 24px;
+    align-items: center;
+    max-width: 680px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .flow-col { display: flex; flex-direction: column; gap: 8px; }
+  .flow-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .flow-item.input {
+    background: var(--white);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+  }
+  .flow-item.output {
+    background: var(--teal-glow);
+    border: 1px solid rgba(13,115,119,0.15);
+    color: var(--teal);
+  }
+  .flow-item .fi-icon { flex-shrink: 0; width: 16px; text-align: center; }
+  .flow-item .fi-icon svg { width: 14px; height: 14px; }
+  .flow-center { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .flow-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--charcoal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal);
+    font-size: 10px;
+    font-family: var(--mono);
+    font-weight: 600;
+    box-shadow: 0 0 0 6px rgba(13,115,119,0.08), 0 0 0 14px rgba(13,115,119,0.03);
+  }
+  .flow-arrow { color: var(--text-tertiary); font-size: 16px; opacity: 0.4; }
+
+  /* ===== BOTTOM: Contact ===== */
+  .bottom {
+    text-align: center;
+    padding: 24px 0 0;
+    border-top: 1px solid var(--border);
+  }
+  .top .contact-links {
+    margin-top: 12px;
+  }
+  .contact-links {
+    font-size: 18px;
+    color: var(--charcoal);
+    line-height: 2;
+    font-weight: 500;
+  }
+  .contact-links a {
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .contact-links a:hover { text-decoration: underline; }
+  .contact-sep {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--text-tertiary);
+    vertical-align: middle;
+    margin: 0 16px;
+    opacity: 0.5;
+  }
+  .footer-copy {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin-top: 12px;
+    font-weight: 300;
+    opacity: 0.7;
+  }
+
+  /* ===== ANIMATION ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .top { opacity: 0; animation: fadeUp 0.6s ease 0.1s forwards; }
+  .middle { opacity: 0; animation: fadeUp 0.6s ease 0.3s forwards; }
+  .bottom { opacity: 0; animation: fadeUp 0.6s ease 0.5s forwards; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .page { padding: 28px 20px 20px; }
+    .headline { font-size: 28px; }
+    .cards { grid-template-columns: 1fr; gap: 10px; }
+    .card { padding: 14px; display: grid; grid-template-columns: 36px 1fr; grid-template-rows: auto auto; gap: 0 12px; }
+    .card-icon { margin-bottom: 0; grid-row: 1 / 3; align-self: center; }
+    .card h3 { margin-bottom: 2px; }
+    .flow {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      max-width: 300px;
+    }
+    .flow-col { gap: 6px; }
+    .flow-item { padding: 8px 12px; font-size: 12px; }
+    .flow-center {
+      flex-direction: row;
+      justify-content: center;
+      gap: 12px;
+    }
+    .flow-logo { width: 44px; height: 44px; font-size: 9px; }
+    .approach-title { font-size: 17px; }
+    .contact-links { font-size: 15px; }
+    .contact-sep { display: none; }
+    .contact-links a { display: block; line-height: 2.2; }
+  }
+
+  @media (max-height: 800px) and (min-width: 769px) {
+    .page { padding: 24px 40px 20px; }
+    .middle { gap: 24px; }
+    .cards { gap: 10px; }
+    .card { padding: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- TOP -->
+  <div class="top">
+    <div class="logo">
+      <span class="bold">Onco</span><span class="light">Fabric</span><span class="cite">¹</span>
+    </div>
+    <div class="headline">Every answer, <span class="light">cited to source.</span></div>
+    <div class="subtitle">The search fabric for precision oncology. Zero hallucination tolerance.</div>
+    <div class="contact-links">
+      <a href="tel:8137453161">813-745-3161</a><span class="contact-sep"></span><a href="mailto:ghulam.rasool@moffitt.org">ghulam.rasool@moffitt.org</a>
+    </div>
+  </div>
+
+  <!-- MIDDLE -->
+  <div class="middle">
+
+    <!-- Challenge -->
+    <div>
+      <div class="section-label coral"><span class="dash"></span> The Challenge</div>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="7" height="7" rx="1.5"/><rect x="11" y="2" width="7" height="7" rx="1.5"/><rect x="2" y="11" width="7" height="7" rx="1.5"/><rect x="11" y="11" width="7" height="7" rx="1.5"/></svg><span class="badge-x">✕</span></div>
+          <h3>Siloed Modalities</h3>
+          <p>Images live in PACS. Genomic data in CSVs. Clinical narratives in messy PDFs. They don't talk to each other.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><svg width="16" height="16" viewBox="0 0 18 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 1H3.5A1.5 1.5 0 002 2.5v15A1.5 1.5 0 003.5 19h11a1.5 1.5 0 001.5-1.5V6L11 1z"/><path d="M11 1v5h5"/><line x1="5.5" y1="10" x2="12.5" y2="10"/><line x1="5.5" y1="13" x2="10" y2="13"/></svg><span class="badge-x">✕</span></div>
+          <h3>Unstructured Chaos</h3>
+          <p>80% of critical patient data is locked in free-text notes, inaccessible to structured queries and analysis.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><circle cx="10" cy="10" r="3.5"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="10" y1="16" x2="10" y2="19"/><line x1="1" y1="10" x2="4" y2="10"/><line x1="16" y1="10" x2="19" y2="10"/></svg><span class="badge-x">✕</span></div>
+          <h3>The "Hallucination" Risk</h3>
+          <p>Standard LLMs can't be trusted for clinical decisions without verifiable evidence trails and source citations.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Approach -->
+    <div>
+      <div class="section-label teal" style="justify-content:center"><span class="dash"></span> Our Approach</div>
+      <div class="approach-title">Bridging the Gap Between Pixel and Phenotype.</div>
+      <div class="flow">
+        <div class="flow-col">
+          <div class="flow-item input"><span class="fi-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1.5" y="1.5" width="13" height="13" rx="1.5"/><path d="M1.5 11l3.5-3.5 2.5 2 3-3.5 4 4"/></svg></span> Imaging Data</div>
+          <div class="flow-item input"><span class="fi-icon"><svg viewBox="0 0 14 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8.5 1H2.5A1.5 1.5 0 001 2.5v11A1.5 1.5 0 002.5 15h9a1.5 1.5 0 001.5-1.5V5L8.5 1z"/><path d="M8.5 1v4h4"/></svg></span> Clinical Data</div>
+          <div class="flow-item input"><span class="fi-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1" y="9" width="3" height="6" rx="0.5"/><rect x="6.5" y="5" width="3" height="10" rx="0.5"/><rect x="12" y="1" width="3" height="14" rx="0.5"/></svg></span> Omics Data</div>
+        </div>
+        <div class="flow-center">
+          <div class="flow-arrow">→</div>
+          <div class="flow-logo">O¹</div>
+          <div class="flow-arrow">→</div>
+        </div>
+        <div class="flow-col">
+          <div class="flow-item output"><span class="fi-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5L14.5 14.5" stroke-linecap="round"/></svg></span> Semantic Search</div>
+          <div class="flow-item output"><span class="fi-icon"><svg viewBox="0 0 18 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="9" cy="4.5" r="2.5"/><path d="M4.5 14.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5"/><circle cx="3.5" cy="6" r="1.8"/><path d="M1 13c0-1.7 1.1-3 2.5-3"/><circle cx="14.5" cy="6" r="1.8"/><path d="M17 13c0-1.7-1.1-3-2.5-3"/></svg></span> Cohort Discovery</div>
+          <div class="flow-item output"><span class="fi-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 12l3-4 3 2.5 4-6.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 3.5h2.5V6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Patient Timelines</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="bottom">
+    <div class="footer-copy">© 2026 OncoFabric. Every data point, cited to source.</div>
+  </div>
+
+</div>
+
+</body>
+</html>

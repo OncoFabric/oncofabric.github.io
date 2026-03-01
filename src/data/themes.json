@@ -1,0 +1,32 @@
+[
+  {
+    "id": "clinical-data-intelligence",
+    "number": "01",
+    "title": "Clinical Data Intelligence",
+    "description": "Transforms fragmented clinical text into structured, time-aware patient intelligence with full provenance."
+  },
+  {
+    "id": "multimodal-ai",
+    "number": "02",
+    "title": "Multimodal AI for Precision Oncology",
+    "description": "Unifies imaging, pathology, genomics, and clinical data into multimodal representations for precision care."
+  },
+  {
+    "id": "trustworthy-ai",
+    "number": "03",
+    "title": "Trustworthy & Validated Clinical AI",
+    "description": "Ensures AI systems are safe, reliable, explainable, and suitable for clinical and regulatory use."
+  },
+  {
+    "id": "evidence-grounded",
+    "number": "04",
+    "title": "Evidence- & Guideline-Grounded Knowledge",
+    "description": "Delivers clinically grounded intelligence with transparent citation to guidelines and evidence."
+  },
+  {
+    "id": "privacy-federated",
+    "number": "05",
+    "title": "Privacy-Preserving & Federated Intelligence",
+    "description": "Enables cross-institutional AI without sharing raw patient data through federated learning."
+  }
+]

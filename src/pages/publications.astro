@@ -1,21 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionLabel from '../components/SectionLabel.astro';
-import PaperCard from '../components/PaperCard.astro';
-import papers from '../data/papers.json';
+import PublicationCard from '../components/PublicationCard.astro';
+import publications from '../data/publications.json';
 
-const sortedPapers = [...papers].sort((a, b) => b.year - a.year);
-const years = [...new Set(sortedPapers.map(p => p.year))].sort((a, b) => b - a);
-const categories = [...new Set(sortedPapers.map(p => p.category))].sort();
+const sortedPublications = [...publications].sort((a, b) => b.year - a.year);
+const years = [...new Set(sortedPublications.map(p => p.year))].sort((a, b) => b - a);
+const categories = [...new Set(sortedPublications.map(p => p.category))].sort();
 ---
 
-<BaseLayout title="Papers — OncoFabric" description="Peer-reviewed research from the OncoFabric team.">
+<BaseLayout title="Publications — OncoFabric" description="Research publications from the OncoFabric team.">
   <div class="page-content">
 
-    <section class="papers-header" data-animate>
+    <section class="publications-header" data-animate>
       <SectionLabel text="Research" variant="teal" />
-      <h1 class="page-headline">Peer-Reviewed Papers</h1>
-      <p class="page-subtitle">Peer-reviewed research from our lab in multimodal AI, foundation models, and clinical intelligence.</p>
+      <h1 class="page-headline">Publications</h1>
+      <p class="page-subtitle">Research from our lab in multimodal AI, foundation models, clinical intelligence, and more.</p>
     </section>
 
     <!-- Filters -->
@@ -34,31 +34,38 @@ const categories = [...new Set(sortedPapers.map(p => p.category))].sort();
           <button class="filter-chip" data-filter="category" data-value={cat}>{cat}</button>
         ))}
       </div>
+      <div class="filter-group">
+        <span class="filter-label">Status</span>
+        <button class="filter-chip active" data-filter="status" data-value="all">All</button>
+        <button class="filter-chip" data-filter="status" data-value="published">Published</button>
+        <button class="filter-chip" data-filter="status" data-value="preprint">Preprint</button>
+      </div>
     </div>
 
-    <!-- Papers List -->
-    <div class="papers-list" data-animate id="papers-list">
-      {sortedPapers.map(paper => (
-        <PaperCard
-          title={paper.title}
-          authors={paper.authors}
-          journal={paper.journal}
-          year={paper.year}
-          category={paper.category}
-          doi={paper.doi}
-          url={paper.url}
-          abstract={paper.abstract}
+    <!-- Publications List -->
+    <div class="publications-list" data-animate id="publications-list">
+      {sortedPublications.map(pub => (
+        <PublicationCard
+          title={pub.title}
+          authors={pub.authors}
+          journal={pub.journal}
+          year={pub.year}
+          category={pub.category}
+          doi={pub.doi}
+          url={pub.url}
+          abstract={pub.abstract}
+          preprint={pub.preprint}
         />
       ))}
     </div>
 
-    <p class="no-results" id="no-results">No papers match the selected filters.</p>
+    <p class="no-results" id="no-results">No publications match the selected filters.</p>
 
   </div>
 </BaseLayout>
 
 <style>
-  .papers-header {
+  .publications-header {
     margin-bottom: 28px;
   }
   .page-headline {
@@ -116,7 +123,7 @@ const categories = [...new Set(sortedPapers.map(p => p.category))].sort();
     color: #fff;
     border-color: var(--teal);
   }
-  .papers-list {
+  .publications-list {
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -136,9 +143,9 @@ const categories = [...new Set(sortedPapers.map(p => p.category))].sort();
 </style>
 
 <script>
-  const filters: Record<string, string> = { year: 'all', category: 'all' };
+  const filters: Record<string, string> = { year: 'all', category: 'all', status: 'all' };
   const chips = document.querySelectorAll('.filter-chip');
-  const cards = document.querySelectorAll('.paper-card');
+  const cards = document.querySelectorAll('.publication-card');
   const noResults = document.getElementById('no-results');
 
   chips.forEach(chip => {
@@ -159,7 +166,11 @@ const categories = [...new Set(sortedPapers.map(p => p.category))].sort();
       cards.forEach(card => {
         const yearMatch = filters.year === 'all' || card.getAttribute('data-year') === filters.year;
         const catMatch = filters.category === 'all' || card.getAttribute('data-category') === filters.category;
-        const hidden = !(yearMatch && catMatch);
+        const isPreprint = card.getAttribute('data-preprint') === 'true';
+        const statusMatch = filters.status === 'all' ||
+          (filters.status === 'preprint' && isPreprint) ||
+          (filters.status === 'published' && !isPreprint);
+        const hidden = !(yearMatch && catMatch && statusMatch);
         card.setAttribute('data-hidden', String(hidden));
         if (!hidden) visible++;
       });

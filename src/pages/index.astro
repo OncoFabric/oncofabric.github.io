@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionLabel from '../components/SectionLabel.astro';
+import ThemeCard from '../components/ThemeCard.astro';
+import themes from '../data/themes.json';
 ---
 
 <BaseLayout title="OncoFabric — The Trusted Clinical Intelligence Layer for Humans & AI">
@@ -14,7 +16,26 @@ import SectionLabel from '../components/SectionLabel.astro';
       <p class="hero-subtitle">Transform raw, fragmented healthcare data into usable intelligence through trusted, reusable, and robust data processing pipelines.</p>
       <div class="hero-actions">
         <a href="/about/" class="btn-primary">About Us</a>
-        <a href="/papers/" class="btn-outline">Research</a>
+        <a href="/publications/" class="btn-outline">Research</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Themes -->
+  <section class="themes-section" data-animate>
+    <div class="themes-inner">
+      <SectionLabel text="Research Themes" variant="teal" centered />
+      <h2 class="themes-heading">Five Pillars of Clinical Intelligence</h2>
+      <p class="themes-subtitle">Our research spans five interconnected themes — from transforming raw clinical data to enabling privacy-preserving collaboration across institutions.</p>
+      <div class="themes-grid">
+        {themes.map(theme => (
+          <ThemeCard
+            id={theme.id}
+            number={theme.number}
+            title={theme.title}
+            description={theme.description}
+          />
+        ))}
       </div>
     </div>
   </section>
@@ -28,7 +49,7 @@ import SectionLabel from '../components/SectionLabel.astro';
     background: var(--gradient-hero);
     padding: var(--space-3xl) 40px var(--space-xl);
     text-align: center;
-    min-height: calc(100vh - 200px);
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,10 +90,48 @@ import SectionLabel from '../components/SectionLabel.astro';
     justify-content: center;
   }
 
+  /* Themes */
+  .themes-section {
+    padding: var(--space-xl) 40px;
+    border-top: 1px solid var(--border);
+  }
+  .themes-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+  }
+  .themes-heading {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  .themes-subtitle {
+    font-size: var(--text-base);
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 640px;
+    margin: 0 auto 36px;
+  }
+  .themes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    text-align: left;
+  }
+
+  @media (max-width: 960px) {
+    .themes-grid { grid-template-columns: repeat(2, 1fr); }
+  }
   @media (max-width: 768px) {
     .hero { padding: 60px 20px 48px; }
     .hero-headline { font-size: 32px; }
     .hero-subtitle { font-size: 15px; }
     .hero-actions { flex-direction: column; align-items: center; }
+    .themes-section { padding: 48px 20px; }
+    .themes-heading { font-size: 28px; }
+    .themes-grid { grid-template-columns: 1fr; }
   }
 </style>

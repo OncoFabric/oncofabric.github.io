@@ -1,0 +1,397 @@
+[
+  {
+    "title": "Explainable AI in Genomics: Transcription Factor Binding Site Prediction with Mixture of Experts",
+    "authors": [
+      "Aakash Tripathi",
+      "Ian E. Nielsen",
+      "Muhammad Umer",
+      "Ravi P. Ramachandran",
+      "Ghulam Rasool"
+    ],
+    "journal": "Under review",
+    "year": 2025,
+    "category": "Multimodal AI",
+    "url": "https://arxiv.org/abs/2507.09754",
+    "preprint": true
+  },
+  {
+    "title": "Reasoning Beyond Accuracy: Expert Evaluation of Large Language Models in Diagnostic Pathology",
+    "authors": [
+      "Asim Waqas",
+      "Ehsan Ullah",
+      "Asma Khan",
+      "Farah Khalil",
+      "Zarifa Gahramanli Ozturk",
+      "Vaibhav Chumbalkar",
+      "Daryoush Saeed-Vafa",
+      "Zena Jameel",
+      "Wei-Shen Chen",
+      "Humberto Trejo Bittar",
+      "Jasreman Dhillon",
+      "Rajendra S. Singh",
+      "Andrey Bychkov",
+      "Anil V. Parwani",
+      "Marilyn M. Bui",
+      "Matthew B. Schabath",
+      "Ghulam Rasool"
+    ],
+    "journal": "Under review",
+    "year": 2025,
+    "category": "Clinical Data Intelligence",
+    "url": "https://www.medrxiv.org/content/10.1101/2025.04.14.25325686v2",
+    "preprint": true
+  },
+  {
+    "title": "Multimodal AI-driven Biomarker for Early Detection of Cancer Cachexia",
+    "authors": [
+      "Sabeen Ahmed",
+      "Nathan Parker",
+      "Margaret Park",
+      "Daniel Jeong",
+      "Lauren Peres",
+      "Evan W. Davis",
+      "Jennifer B. Permuth",
+      "Erin Siegel",
+      "Matthew B. Schabath",
+      "Yasin Yilmaz",
+      "Ghulam Rasool"
+    ],
+    "journal": "Under review",
+    "year": 2025,
+    "category": "Multimodal AI",
+    "url": "https://doi.org/10.1101/2025.09.17.25336028",
+    "preprint": true
+  },
+  {
+    "title": "Reliable Radiologic Skeletal Muscle Area Assessment – A Biomarker for Cancer Cachexia Diagnosis",
+    "authors": [
+      "Sabeen Ahmed",
+      "Nathan Parker",
+      "Margaret Park",
+      "Daniel Jeong",
+      "Lauren Peres",
+      "Evan W. Davis",
+      "Jennifer B. Permuth",
+      "Erin Siegel",
+      "Matthew B. Schabath",
+      "Yasin Yilmaz",
+      "Ghulam Rasool"
+    ],
+    "journal": "Under review",
+    "year": 2025,
+    "category": "Medical Imaging",
+    "url": "https://www.medrxiv.org/content/10.1101/2025.04.21.25326162v1",
+    "preprint": true
+  },
+  {
+    "title": "Clinical AI in Radiology: Foundations, Trends, and Emerging Directions with Use Cases from Moffitt Cancer Center",
+    "authors": [
+      "Iryna Hartsock",
+      "Nikolas Koutsoubis",
+      "Sabeen Ahmed",
+      "Nathan Parker",
+      "Matthew Schabath",
+      "Cyrillo Araujo",
+      "Cesar Lam",
+      "Robert Gatenby",
+      "Ghulam Rasool"
+    ],
+    "journal": "Under review in MDPI Cancers",
+    "year": 2025,
+    "category": "Medical Imaging",
+    "url": "https://www.preprints.org/manuscript/202602.0555",
+    "preprint": true
+  },
+  {
+    "title": "Using Consensus-based Reasoning and Large Language Models to Extract Structured Data from Surgical Pathology Reports",
+    "authors": [
+      "Aakash Tripathi",
+      "Asim Waqas",
+      "Kavya Venkatesan",
+      "Ehsan Ullah",
+      "Asma Khan",
+      "Farah Khalil",
+      "Zarifa Gahramanli Ozturk",
+      "Daryoush Saeed-Vafa",
+      "Wei-Shen Chen",
+      "Marilyn M. Bui",
+      "Matthew B. Schabath",
+      "Ghulam Rasool"
+    ],
+    "journal": "Laboratory Investigation",
+    "year": 2026,
+    "category": "Clinical Data Intelligence",
+    "doi": "10.1016/j.labinv.2025.104272",
+    "url": "https://doi.org/10.1016/j.labinv.2025.104272",
+    "preprint": false
+  },
+  {
+    "title": "HONeYBEE: Enabling Scalable Multimodal AI in Oncology Through Foundation Model-Driven Embeddings",
+    "authors": [
+      "Aakash Tripathi",
+      "Asim Waqas",
+      "Yasin Yilmaz",
+      "Ghulam Rasool"
+    ],
+    "journal": "npj Digital Medicine",
+    "year": 2025,
+    "category": "Multimodal AI",
+    "doi": "10.1038/s41746-025-02003-4",
+    "url": "https://doi.org/10.1038/s41746-025-02003-4",
+    "preprint": false
+  },
+  {
+    "title": "Self-Normalizing Multi-Omics Neural Network for Pan-Cancer Prognostication",
+    "authors": [
+      "Asim Waqas",
+      "Aakash Tripathi",
+      "Sabeen Ahmed",
+      "Ashwin Mukund",
+      "Hamza Farooq",
+      "Matthew B. Schabath",
+      "Paul Stewart",
+      "Mia Naeini",
+      "Ghulam Rasool"
+    ],
+    "journal": "International Journal of Molecular Sciences",
+    "year": 2025,
+    "category": "Multimodal AI",
+    "doi": "10.3390/ijms26157358",
+    "url": "https://doi.org/10.3390/ijms26157358",
+    "preprint": false
+  },
+  {
+    "title": "Improving Radiology Report Conciseness and Structure via Local Large Language Model",
+    "authors": [
+      "Iryna Hartsock",
+      "Cyrillo Araujo",
+      "Les Folio",
+      "Ghulam Rasool"
+    ],
+    "journal": "Journal of Imaging Informatics in Medicine",
+    "year": 2025,
+    "category": "Clinical Data Intelligence",
+    "doi": "10.1007/s10278-025-01510-w",
+    "url": "https://doi.org/10.1007/s10278-025-01510-w",
+    "preprint": false
+  },
+  {
+    "title": "Privacy-Preserving Federated Learning and Uncertainty Quantification in Medical Imaging",
+    "authors": [
+      "Nikolas Koutsoubis",
+      "Yasin Yilmaz",
+      "Matthew Schabath",
+      "Ghulam Rasool"
+    ],
+    "journal": "RSNA Radiology AI",
+    "year": 2025,
+    "category": "Privacy & Federated Intelligence",
+    "doi": "10.1148/ryai.240637",
+    "url": "https://pubs.rsna.org/doi/10.1148/ryai.240637",
+    "preprint": false
+  },
+  {
+    "title": "Building Flexible, Scalable, and Machine Learning-Ready Multimodal Oncology Datasets",
+    "authors": [
+      "Aakash Tripathi",
+      "Asim Waqas",
+      "Kavya Venkatesan",
+      "Yasin Yilmaz",
+      "Ghulam Rasool"
+    ],
+    "journal": "Sensors",
+    "year": 2024,
+    "category": "Multimodal AI",
+    "doi": "10.3390/s24051634",
+    "url": "https://doi.org/10.3390/s24051634",
+    "preprint": false
+  },
+  {
+    "title": "Digital Pathology and Multimodal Learning on Oncology Data",
+    "authors": [
+      "Asim Waqas",
+      "Javeria Naveed",
+      "Warda Shahnawaz",
+      "Shoaib Asghar",
+      "Marilyn M. Bui",
+      "Ghulam Rasool"
+    ],
+    "journal": "BJR Artificial Intelligence",
+    "year": 2024,
+    "category": "Multimodal AI",
+    "doi": "10.1093/bjrai/ubae014",
+    "url": "https://doi.org/10.1093/bjrai/ubae014",
+    "preprint": false
+  },
+  {
+    "title": "Vision-Language Models for Medical Report Generation and Visual Question Answering: A Review",
+    "authors": [
+      "Iryna Hartsock",
+      "Ghulam Rasool"
+    ],
+    "journal": "Frontiers in AI",
+    "year": 2024,
+    "category": "Multimodal AI",
+    "doi": "10.3389/frai.2024.1430984",
+    "url": "https://doi.org/10.3389/frai.2024.1430984",
+    "preprint": false
+  },
+  {
+    "title": "Multimodal Data Integration for Oncology in the Era of Deep Neural Networks: A Review",
+    "authors": [
+      "Asim Waqas",
+      "Aakash Tripathi",
+      "Ravi P. Ramachandran",
+      "Paul Stewart",
+      "Ghulam Rasool"
+    ],
+    "journal": "Frontiers in Artificial Intelligence",
+    "year": 2024,
+    "category": "Multimodal AI",
+    "doi": "10.3389/frai.2024.1408843",
+    "url": "https://doi.org/10.3389/frai.2024.1408843",
+    "preprint": false
+  },
+  {
+    "title": "TRUST-RNNs: Trustworthy Recurrent Uncertainty Propagation",
+    "authors": [
+      "Dimah Dera",
+      "Sabeen Ahmed",
+      "Nidhal Bouaynaya",
+      "Ghulam Rasool"
+    ],
+    "journal": "IEEE Transactions on Knowledge and Data Engineering",
+    "year": 2023,
+    "category": "Trustworthy AI",
+    "doi": "10.1109/TKDE.2023.3288628",
+    "url": "https://doi.ieeecomputersociety.org/10.1109/TKDE.2023.3288628",
+    "preprint": false
+  },
+  {
+    "title": "Transformers for Time-series Analysis: A Tutorial",
+    "authors": [
+      "Sabeen Ahmed",
+      "Ian Nielsen",
+      "Aakash Tripathi",
+      "Ravi Ramachandran",
+      "Ghulam Rasool"
+    ],
+    "journal": "Circuits, Systems, and Signal Processing (CSSP)",
+    "year": 2023,
+    "category": "Trustworthy AI",
+    "doi": "10.1007/s00034-023-02454-8",
+    "url": "https://doi.org/10.1007/s00034-023-02454-8",
+    "preprint": false
+  },
+  {
+    "title": "A Comparison of Feature Selection Techniques for First-Day Mortality Prediction in the ICU",
+    "authors": [
+      "Jacob Epifano",
+      "Aakash Tripathi",
+      "Alison Silvestri",
+      "Alexander Yu",
+      "Ravi Ramachandran",
+      "Ghulam Rasool"
+    ],
+    "journal": "2023 IEEE International Symposium on Circuits and Systems",
+    "year": 2023,
+    "category": "Trustworthy AI",
+    "url": "https://jrepifano.github.io/papers/featureselection.pdf",
+    "preprint": false
+  },
+  {
+    "title": "Revolutionizing Digital Pathology with the Power of Generative AI and Foundation Models",
+    "authors": [
+      "Asim Waqas",
+      "Marilyn M. Bui",
+      "Eric F. Glassy",
+      "Issam El Naqa",
+      "Piotr A. Borkowski",
+      "Andrew A. Borkowski",
+      "Ghulam Rasool"
+    ],
+    "journal": "Laboratory Investigation",
+    "year": 2023,
+    "category": "Multimodal AI",
+    "doi": "10.1016/j.labinv.2023.100255",
+    "url": "https://doi.org/10.1016/j.labinv.2023.100255",
+    "preprint": false
+  },
+  {
+    "title": "Exploring Robust Architectures for Deep Artificial Neural Networks",
+    "authors": [
+      "Asim Waqas",
+      "Nidhal Bouaynaya",
+      "Hama Farooq",
+      "Ghulam Rasool"
+    ],
+    "journal": "Communication Engineering",
+    "year": 2022,
+    "category": "Trustworthy AI",
+    "doi": "10.1038/s44172-022-00043-2",
+    "url": "https://doi.org/10.1038/s44172-022-00043-2",
+    "preprint": false
+  },
+  {
+    "title": "Failure Detection in Deep Neural Networks for Medical Imaging",
+    "authors": [
+      "Sabeen Ahmed",
+      "Dimah Dera",
+      "Muhammad Saud Ul Hassan",
+      "Nidhal Bouaynaya",
+      "Ghulam Rasool"
+    ],
+    "journal": "Frontiers in Medical Technology",
+    "year": 2022,
+    "category": "Trustworthy AI",
+    "doi": "10.3389/fmedt.2022.919046",
+    "url": "https://doi.org/10.3389/fmedt.2022.919046",
+    "preprint": false
+  },
+  {
+    "title": "EAGLE: Efficient Alignment of Generalized Latent Embeddings for Multimodal Survival Prediction with Interpretable Attribution Analysis",
+    "authors": [
+      "Aakash Tripathi",
+      "Asim Waqas",
+      "Matthew B. Schabath",
+      "Yasin Yilmaz",
+      "Ghulam Rasool"
+    ],
+    "journal": "Preprint",
+    "year": 2025,
+    "category": "Multimodal AI",
+    "url": "https://arxiv.org/abs/2506.22446",
+    "preprint": true
+  },
+  {
+    "title": "Embedding-based Multimodal Learning on Pan-Squamous Cell Carcinomas for Improved Survival Outcomes",
+    "authors": [
+      "Asim Waqas",
+      "Aakash Tripathi",
+      "Paul Stewart",
+      "Mia Naeini",
+      "Ghulam Rasool"
+    ],
+    "journal": "Preprint",
+    "year": 2024,
+    "category": "Multimodal AI",
+    "doi": "10.48550/arXiv.2406.08521",
+    "url": "https://doi.org/10.48550/arXiv.2406.08521",
+    "preprint": true
+  },
+  {
+    "title": "Privacy-Preserving Federated Learning in Medical Imaging with Uncertainty Estimation",
+    "authors": [
+      "Nikolas Koutsoubis",
+      "Yasin Yilmaz",
+      "Matthew Schabath",
+      "Ghulam Rasool"
+    ],
+    "journal": "Preprint",
+    "year": 2024,
+    "category": "Privacy & Federated Intelligence",
+    "doi": "10.48550/arXiv.2406.12815",
+    "url": "https://doi.org/10.48550/arXiv.2406.12815",
+    "preprint": true
+  }
+]

@@ -1,70 +1,70 @@
 [
   {
-    "name": "Ghulam Rasool",
+    "name": "Ghulam Rasool, Ph.D.",
     "title": "",
     "photo": "/assets/images/ghlam.jpg",
-    "bio": "Developing trustworthy AI for oncology through multimodal machine learning.",
+    "bio": "Associate Member in the Department of Machine Learning at Moffitt Cancer Center. Builds trustworthy, multimodal AI systems integrating radiology, pathology, molecular, and clinical data to improve cancer care. Research funded by NSF and NIH.",
     "links": {
-      "linkedin": "",
-      "scholar": "",
-      "website": ""
+      "linkedin": "https://www.linkedin.com/in/gxrasool",
+      "scholar": "https://scholar.google.com/citations?user=Ejo4SlwAAAAJ&hl=en",
+      "website": "https://lab.moffitt.org/rasool/"
     }
   },
   {
-    "name": "Asim Waqas",
+    "name": "Asim Waqas, Ph.D.",
     "title": "",
     "photo": "/assets/images/asim.jpg",
     "photoPosition": "center 10%",
-    "bio": "ML in oncology, graph neural networks, multimodal data integration. PhD Electrical Engineering, University of South Florida.",
+    "bio": "Postdoctoral researcher at Moffitt Cancer Center. Develops graph neural networks and multimodal learning frameworks for cancer survival prediction and multi-omics integration. PhD in Electrical Engineering, University of South Florida.",
     "links": {
-      "linkedin": "",
-      "scholar": "",
+      "linkedin": "https://www.linkedin.com/in/asim-waqas-7773b248",
+      "scholar": "https://scholar.google.com/citations?user=vq-Mr-sAAAAJ&hl=en",
       "website": ""
     }
   },
   {
-    "name": "Aakash Tripathi",
+    "name": "Aakash Tripathi, Ph.D.",
     "title": "",
     "photo": "/assets/images/aakash.jpg",
-    "bio": "Scalable multimodal and agentic systems. PhD Electrical Engineering, University of South Florida.",
+    "bio": "Machine Learning Engineer at Moffitt Cancer Center. Develops open-source multimodal AI frameworks including HONeYBEE (npj Digital Medicine) and MINDS, and multi-agent clinical NLP systems for oncology. PhD in Electrical Engineering, University of South Florida.",
     "links": {
-      "linkedin": "",
-      "scholar": "",
-      "website": ""
+      "linkedin": "https://www.linkedin.com/in/aakash-tripathi",
+      "scholar": "https://scholar.google.com/citations?user=7X57fGgAAAAJ&hl=en",
+      "website": "https://github.com/Aakash-Tripathi"
     }
   },
   {
-    "name": "Sabeen Ahmed",
+    "name": "Sabeen Ahmed, Ph.D.",
     "title": "",
     "photo": "/assets/images/sabeen.jpg",
     "photoPosition": "center 10%",
-    "bio": "Multi-omics neural networks for cancer prognostication. BE Electrical Engineering, NUST.",
+    "bio": "Develops AI-driven models for cancer cachexia detection and multi-omics neural networks for pan-cancer prognostication at Moffitt Cancer Center. Co-author of SeNMo and research on transformers for time-series analysis.",
     "links": {
-      "linkedin": "",
-      "scholar": "",
+      "linkedin": "https://www.linkedin.com/in/sabeen-ahmed-35697538",
+      "scholar": "https://scholar.google.com/citations?user=_AYZlAIAAAAJ&hl=en",
       "website": ""
     }
   },
   {
-    "name": "Iryna Hartsock",
+    "name": "Iryna Hartsock, Ph.D.",
     "title": "",
     "photo": "/assets/images/iryna.png",
     "photoPosition": "center 10%",
-    "bio": "Conversational AI for tumor boards. Background in Topological Data Analysis. PhD Mathematics, University of Florida.",
+    "bio": "Postdoctoral fellow at Moffitt Cancer Center. Applies topological data analysis and conversational AI to oncology, including tumor board decision support. PhD in Mathematics, University of Florida.",
     "links": {
-      "linkedin": "",
-      "scholar": "",
+      "linkedin": "https://www.linkedin.com/in/iryna-hartsock-254926219",
+      "scholar": "https://scholar.google.com/citations?user=yw3G420AAAAJ&hl=en",
       "website": ""
     }
   },
   {
-    "name": "Nikolos Koutsoubis",
+    "name": "Nikolas Koutsoubis",
     "title": "",
     "photo": "/assets/images/niko.png",
-    "bio": "Privacy-preserving federated learning and uncertainty quantification. MS Electrical & Computer Engineering, Rowan University.",
+    "bio": "Graduate research assistant at Moffitt Cancer Center. Researches privacy-preserving federated learning and uncertainty quantification in medical imaging. Published in Radiology: Artificial Intelligence. MS in Electrical & Computer Engineering, Rowan University.",
     "links": {
-      "linkedin": "",
-      "scholar": "",
+      "linkedin": "https://www.linkedin.com/in/nikolas-koutsoubis-08a15b194",
+      "scholar": "https://scholar.google.com/citations?user=BIj-D18AAAAJ&hl=en",
       "website": ""
     }
   }

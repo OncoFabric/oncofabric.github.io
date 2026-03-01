@@ -1,0 +1,150 @@
+---
+const pathname = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/papers/', label: 'Papers' },
+  { href: '/about/', label: 'About' },
+];
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="bold">Onco</span><span class="light">Fabric</span><span class="cite">&#185;</span>
+    </a>
+    <nav class="nav-desktop">
+      {navLinks.map(link => (
+        <a href={link.href} class:list={['nav-link', { active: pathname === link.href }]}>
+          {link.label}
+        </a>
+      ))}
+      <a href="/contact/" class="btn-primary header-cta">Get in Touch</a>
+    </nav>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile">
+    {navLinks.map(link => (
+      <a href={link.href} class:list={['nav-link', { active: pathname === link.href }]}>
+        {link.label}
+      </a>
+    ))}
+    <a href="/contact/" class="btn-primary header-cta-mobile">Get in Touch</a>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-size: 20px;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+    color: var(--text-primary);
+  }
+  .logo .bold { font-weight: 700; }
+  .logo .light { font-weight: 300; }
+  .logo .cite {
+    color: var(--teal);
+    font-family: var(--mono);
+    font-size: 10px;
+    vertical-align: super;
+    font-weight: 600;
+  }
+  .nav-desktop {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .nav-link {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: color 0.15s;
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--teal);
+    text-decoration: none;
+  }
+  .nav-link.active {
+    font-weight: 700;
+  }
+  .header-cta {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+  .header-cta-mobile {
+    padding: 10px 24px;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 4px;
+  }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 1px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .nav-mobile {
+    display: none;
+    flex-direction: column;
+    padding: 0 40px 16px;
+    gap: 12px;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .nav-mobile .nav-link {
+    font-size: 15px;
+  }
+
+  @media (max-width: 768px) {
+    .header-inner { padding: 14px 20px; }
+    .nav-desktop { display: none; }
+    .hamburger { display: flex; }
+    .nav-mobile { padding: 0 20px 16px; }
+    .nav-mobile.open { display: flex; }
+  }
+</style>
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.querySelector('.nav-mobile');
+  hamburger?.addEventListener('click', () => {
+    const isOpen = mobileNav?.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  });
+</script>

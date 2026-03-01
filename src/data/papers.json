@@ -1,0 +1,82 @@
+[
+  {
+    "title": "HONeYBEE: A Scalable Modular Framework for Creating Multimodal Oncology Datasets with Foundational Embedding Alignments",
+    "authors": ["Aakash Tripathi", "Asim Waqas", "Matthew Schabath", "Yasin Yilmaz", "Ghulam Rasool"],
+    "journal": "npj Digital Medicine",
+    "year": 2025,
+    "category": "Foundation Models",
+    "doi": "10.1038/s41746-025-02003-4",
+    "url": "https://doi.org/10.1038/s41746-025-02003-4",
+    "abstract": "A scalable modular framework for creating multimodal oncology datasets with foundational embedding alignments."
+  },
+  {
+    "title": "Vision-Language Models for Medical Report Generation and Visual Question Answering: A Review",
+    "authors": ["Iryna Hartsock", "Ghulam Rasool"],
+    "journal": "Frontiers in AI",
+    "year": 2024,
+    "category": "Clinical NLP",
+    "doi": "10.3389/frai.2024.1430984",
+    "url": "https://doi.org/10.3389/frai.2024.1430984",
+    "abstract": "A review of vision-language models for medical report generation and visual question answering."
+  },
+  {
+    "title": "Improving Radiology Report Conciseness and Structure via Local Large Language Models",
+    "authors": ["Iryna Hartsock", "Marcio Araujo", "Les Folio", "Ghulam Rasool"],
+    "journal": "Journal of Imaging Informatics in Medicine",
+    "year": 2025,
+    "category": "Clinical NLP",
+    "doi": "10.1007/s10278-025-01510-w",
+    "url": "https://doi.org/10.1007/s10278-025-01510-w",
+    "abstract": "Improving radiology report conciseness and structure via local large language models."
+  },
+  {
+    "title": "A Self-Normalizing Multi-Omics Multi-Tab Neural Network for Predicting Cancer Patient Prognosis",
+    "authors": ["Asim Waqas", "Aakash Tripathi", "Sabeen Ahmed", "Srividya Mukund", "Hamza Farooq", "Joseph Johnson", "Paul Stewart", "Mayer Naeini", "Matthew Schabath", "Ghulam Rasool"],
+    "journal": "International Journal of Molecular Sciences",
+    "year": 2025,
+    "category": "Multimodal AI",
+    "doi": "10.3390/ijms26157358",
+    "url": "https://doi.org/10.3390/ijms26157358",
+    "abstract": "A self-normalizing multi-omics multi-tab neural network for predicting cancer patient prognosis."
+  },
+  {
+    "title": "Privacy-Preserving Federated Learning for Prostate Cancer Detection with Diverse Data",
+    "authors": ["Nikolos Koutsoubis", "Asim Waqas", "Yasin Yilmaz", "Ravi Ramachandran", "Matthew Schabath", "Ghulam Rasool"],
+    "journal": "Radiology: Artificial Intelligence",
+    "year": 2025,
+    "category": "Medical Imaging",
+    "doi": "10.1148/ryai.240637",
+    "url": "https://doi.org/10.1148/ryai.240637",
+    "abstract": "Privacy-preserving federated learning for prostate cancer detection with diverse data."
+  },
+  {
+    "title": "Building Flexible, Scalable, and Machine Learning-Ready Multimodal Oncology Datasets",
+    "authors": ["Aakash Tripathi", "Asim Waqas", "Kavya Venkatesan", "Yasin Yilmaz", "Ghulam Rasool"],
+    "journal": "Sensors",
+    "year": 2024,
+    "category": "Multimodal AI",
+    "doi": "10.3390/s24051634",
+    "url": "https://doi.org/10.3390/s24051634",
+    "abstract": "Building flexible, scalable, and machine learning-ready multimodal oncology datasets."
+  },
+  {
+    "title": "Digital Pathology and Multimodal Learning",
+    "authors": ["Asim Waqas", "Hassaan Naveed", "Sarim Shahnawaz", "Shoaib Asghar", "Marilyn Bui", "Ghulam Rasool"],
+    "journal": "BJR|AI",
+    "year": 2024,
+    "category": "Medical Imaging",
+    "doi": "10.1093/bjrai/ubae014",
+    "url": "https://doi.org/10.1093/bjrai/ubae014",
+    "abstract": "Digital pathology and multimodal learning for clinical decision support."
+  },
+  {
+    "title": "Multimodal Data Integration for Oncology in the Era of Deep Neural Networks: A Review",
+    "authors": ["Asim Waqas", "Aakash Tripathi", "Ravi Ramachandran", "Paul Stewart", "Ghulam Rasool"],
+    "journal": "Frontiers in AI",
+    "year": 2024,
+    "category": "Multimodal AI",
+    "doi": "10.3389/frai.2024.1408843",
+    "url": "https://doi.org/10.3389/frai.2024.1408843",
+    "abstract": "A review of multimodal data integration for oncology in the era of deep neural networks."
+  }
+]

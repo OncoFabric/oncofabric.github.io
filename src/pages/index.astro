@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+---
+
+<BaseLayout title="OncoFabric — The Trusted Clinical Intelligence Layer for Humans & AI">
+
+  <!-- Hero -->
+  <section class="hero" data-animate>
+    <div class="hero-glow"></div>
+    <div class="hero-inner">
+      <SectionLabel text="Clinical Intelligence" variant="teal" centered />
+      <h1 class="hero-headline">The Trusted Clinical Intelligence Layer for Humans & AI</h1>
+      <p class="hero-subtitle">Transform raw, fragmented healthcare data into usable intelligence through trusted, reusable, and robust data processing pipelines.</p>
+      <div class="hero-actions">
+        <a href="/about/" class="btn-primary">About Us</a>
+        <a href="/papers/" class="btn-outline">Research</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--gradient-hero);
+    padding: var(--space-3xl) 40px var(--space-xl);
+    text-align: center;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-glow {
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(20, 184, 166, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .hero-headline {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    margin-bottom: 16px;
+  }
+  .hero-subtitle {
+    font-size: var(--text-lg);
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 620px;
+    margin: 0 auto 32px;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    .hero { padding: 60px 20px 48px; }
+    .hero-headline { font-size: 32px; }
+    .hero-subtitle { font-size: 15px; }
+    .hero-actions { flex-direction: column; align-items: center; }
+  }
+</style>

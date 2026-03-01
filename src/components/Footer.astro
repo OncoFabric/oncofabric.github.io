@@ -1,0 +1,128 @@
+---
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div class="footer-col footer-brand">
+        <a href="/" class="footer-logo">
+          <span class="bold">Onco</span><span class="light">Fabric</span><span class="cite">&#185;</span>
+        </a>
+        <p class="footer-tagline">The trusted clinical intelligence layer for humans & AI.</p>
+      </div>
+
+      <!-- Research -->
+      <div class="footer-col">
+        <h4>Research</h4>
+        <a href="/papers/">Papers</a>
+      </div>
+
+      <!-- Company -->
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </div>
+
+      <!-- Connect -->
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="tel:8137453161">813-745-3161</a>
+        <a href="mailto:ghulam.rasool@moffitt.org">ghulam.rasool@moffitt.org</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 OncoFabric. Moffitt Cancer Center.</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 48px 40px 24px;
+    background: var(--bg-primary);
+  }
+  .footer-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 36px;
+  }
+  .footer-logo {
+    font-size: 18px;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+    color: var(--text-primary);
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .footer-logo .bold { font-weight: 700; }
+  .footer-logo .light { font-weight: 300; }
+  .footer-logo .cite {
+    color: var(--teal);
+    font-family: var(--mono);
+    font-size: 9px;
+    vertical-align: super;
+    font-weight: 600;
+  }
+  .footer-tagline {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--text-tertiary);
+    line-height: 1.6;
+    max-width: 280px;
+  }
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .footer-col h4 {
+    font-size: 12px;
+    font-family: var(--mono);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+    margin-bottom: 4px;
+  }
+  .footer-col a {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.15s;
+  }
+  .footer-col a:hover {
+    color: var(--teal);
+    text-decoration: none;
+  }
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    text-align: center;
+  }
+  .footer-bottom span {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    font-weight: 300;
+  }
+
+  @media (max-width: 768px) {
+    .site-footer { padding: 32px 20px 20px; }
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .footer-brand {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

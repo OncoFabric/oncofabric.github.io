@@ -1,0 +1,19 @@
+---
+interface Props {
+  text: string;
+  variant?: 'teal' | 'coral';
+  centered?: boolean;
+}
+
+const { text, variant = 'teal', centered = false } = Astro.props;
+---
+
+<div class:list={['section-label', variant, { centered }]}>
+  <span class="dash"></span> {text}
+</div>
+
+<style>
+  .centered {
+    justify-content: center;
+  }
+</style>

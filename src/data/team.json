@@ -1,0 +1,71 @@
+[
+  {
+    "name": "Ghulam Rasool",
+    "title": "",
+    "photo": "/assets/images/ghlam.jpg",
+    "bio": "Developing trustworthy AI for oncology through multimodal machine learning.",
+    "links": {
+      "linkedin": "",
+      "scholar": "",
+      "website": ""
+    }
+  },
+  {
+    "name": "Asim Waqas",
+    "title": "",
+    "photo": "/assets/images/asim.jpg",
+    "photoPosition": "center 10%",
+    "bio": "ML in oncology, graph neural networks, multimodal data integration. PhD Electrical Engineering, University of South Florida.",
+    "links": {
+      "linkedin": "",
+      "scholar": "",
+      "website": ""
+    }
+  },
+  {
+    "name": "Aakash Tripathi",
+    "title": "",
+    "photo": "/assets/images/aakash.jpg",
+    "bio": "Scalable multimodal and agentic systems. PhD Electrical Engineering, University of South Florida.",
+    "links": {
+      "linkedin": "",
+      "scholar": "",
+      "website": ""
+    }
+  },
+  {
+    "name": "Sabeen Ahmed",
+    "title": "",
+    "photo": "/assets/images/sabeen.jpg",
+    "photoPosition": "center 10%",
+    "bio": "Multi-omics neural networks for cancer prognostication. BE Electrical Engineering, NUST.",
+    "links": {
+      "linkedin": "",
+      "scholar": "",
+      "website": ""
+    }
+  },
+  {
+    "name": "Iryna Hartsock",
+    "title": "",
+    "photo": "/assets/images/iryna.png",
+    "photoPosition": "center 10%",
+    "bio": "Conversational AI for tumor boards. Background in Topological Data Analysis. PhD Mathematics, University of Florida.",
+    "links": {
+      "linkedin": "",
+      "scholar": "",
+      "website": ""
+    }
+  },
+  {
+    "name": "Nikolos Koutsoubis",
+    "title": "",
+    "photo": "/assets/images/niko.png",
+    "bio": "Privacy-preserving federated learning and uncertainty quantification. MS Electrical & Computer Engineering, Rowan University.",
+    "links": {
+      "linkedin": "",
+      "scholar": "",
+      "website": ""
+    }
+  }
+]

@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+---
+
+<BaseLayout title="Contact — OncoFabric" description="Get in touch with the OncoFabric team.">
+  <div class="page-content">
+
+    <section class="contact-section" data-animate>
+      <SectionLabel text="Contact" variant="teal" />
+      <h1 class="page-headline">Get in Touch</h1>
+      <p class="page-subtitle">Interested in OncoFabric? Reach out to learn more about our platform and research.</p>
+    </section>
+
+    <div class="contact-details" data-animate>
+      <div class="detail-item">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div>
+          <h3>Phone</h3>
+          <a href="tel:8137453161">813-745-3161</a>
+        </div>
+      </div>
+
+      <div class="detail-item">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <h3>Email</h3>
+          <a href="mailto:ghulam.rasool@moffitt.org">ghulam.rasool@moffitt.org</a>
+        </div>
+      </div>
+
+      <div class="detail-item">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <h3>Affiliation</h3>
+          <p>Moffitt Cancer Center<br>Tampa, FL</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .contact-section {
+    margin-bottom: 36px;
+  }
+  .page-headline {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .page-subtitle {
+    font-size: var(--text-base);
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* Details */
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .detail-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--teal-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--teal);
+  }
+  .detail-icon svg { width: 20px; height: 20px; }
+  .detail-item h3 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 2px;
+    color: var(--text-primary);
+  }
+  .detail-item a {
+    font-size: 14px;
+    color: var(--teal);
+    font-weight: 500;
+  }
+  .detail-item p {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .page-headline { font-size: 28px; }
+  }
+</style>

@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+import TeamCard from '../components/TeamCard.astro';
+import team from '../data/team.json';
+---
+
+<BaseLayout title="About — OncoFabric" description="Building the trusted intelligence layer for oncology.">
+  <div class="page-content">
+
+    <!-- About Section -->
+    <section class="about-section" data-animate>
+      <SectionLabel text="About Us" variant="teal" />
+      <h1 class="page-headline">Building the Trusted Intelligence Layer <span class="light">for Oncology</span></h1>
+      <div class="about-text">
+        <p>
+          OncoFabric transforms fragmented healthcare data — clinical notes, imaging, pathology, molecular profiles — into trusted clinical intelligence that clinicians, researchers, and AI systems can act on.
+        </p>
+        <p>
+          Born at Moffitt Cancer Center, we build multimodal foundation models, LLM-based agentic pipelines, and data infrastructure with auditability and provenance at the core. Every answer traces back to source.
+        </p>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section" data-animate>
+      <SectionLabel text="Our Team" variant="teal" />
+      <div class="team-grid">
+        {team.map(member => (
+          <TeamCard
+            name={member.name}
+            title={member.title}
+            photo={member.photo}
+            photoPosition={member.photoPosition}
+            bio={member.bio}
+            links={member.links}
+          />
+        ))}
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .about-section {
+    margin-bottom: 48px;
+  }
+  .page-headline {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .page-headline .light {
+    font-weight: 300;
+    color: var(--text-secondary);
+  }
+  .about-text {
+    max-width: 720px;
+  }
+  .about-text p {
+    font-size: var(--text-base);
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+  }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 960px) {
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .page-headline { font-size: 28px; }
+    .team-grid { grid-template-columns: 1fr; }
+  }
+</style>

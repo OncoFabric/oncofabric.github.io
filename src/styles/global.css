@@ -1,0 +1,283 @@
+:root {
+  /* Backgrounds */
+  --bg-primary: #0a0a0a;
+  --bg-elevated: #111111;
+  --bg-surface: #1a1a1a;
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-tertiary: #666666;
+
+  /* Legacy aliases */
+  --charcoal: #ffffff;
+  --cream: #0a0a0a;
+  --cream-dark: #111111;
+  --white: #1a1a1a;
+
+  /* Accents */
+  --teal: #14b8a6;
+  --teal-glow: rgba(20, 184, 166, 0.10);
+  --coral: #f06272;
+
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.15);
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #0a0a0a 0%, #111 50%, #0d1f1d 100%);
+  --gradient-cta: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+  --gradient-section-alt: #111111;
+
+  /* Typography scale */
+  --text-xs: 11px;
+  --text-sm: 13px;
+  --text-base: 15px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 28px;
+  --text-3xl: 42px;
+  --text-4xl: 56px;
+
+  /* Spacing scale */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 48px;
+  --space-xl: 80px;
+  --space-2xl: 100px;
+  --space-3xl: 120px;
+
+  /* Layout */
+  --max-width: 1200px;
+  --radius: 10px;
+  --radius-sm: 8px;
+  --radius-pill: 999px;
+
+  /* Fonts */
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'DM Sans', -apple-system, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== SHARED COMPONENTS ===== */
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.section-label .dash { width: 16px; height: 2px; border-radius: 1px; }
+.section-label.coral { color: var(--coral); }
+.section-label.coral .dash { background: var(--coral); }
+.section-label.teal { color: var(--teal); }
+.section-label.teal .dash { background: var(--teal); }
+
+/* ===== BUTTONS ===== */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: var(--radius-pill);
+  background: var(--gradient-cta);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-primary);
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid var(--border-strong);
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.btn-outline:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+/* ===== CARDS ===== */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--border-strong);
+}
+.card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  position: relative;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+}
+.card-icon svg { width: 16px; height: 16px; }
+.card-icon .badge-x {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--coral);
+  color: white;
+  font-size: 8px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card h3 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+.card p {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+/* ===== CONTACT LINKS ===== */
+
+.contact-links {
+  font-size: 18px;
+  color: var(--text-secondary);
+  line-height: 2;
+  font-weight: 500;
+}
+.contact-links a {
+  color: var(--teal);
+  text-decoration: none;
+  font-weight: 600;
+}
+.contact-links a:hover { text-decoration: underline; }
+.contact-sep {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-tertiary);
+  vertical-align: middle;
+  margin: 0 16px;
+  opacity: 0.5;
+}
+
+/* ===== SCROLL ANIMATION ===== */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-animate].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== PAGE LAYOUT ===== */
+
+.page-content {
+  flex: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+  padding: 36px 40px 28px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .page-content { padding: 28px 20px 20px; }
+  .cards { grid-template-columns: 1fr; gap: 10px; }
+  .card {
+    padding: 14px;
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    grid-template-rows: auto auto;
+    gap: 0 12px;
+  }
+  .card-icon { margin-bottom: 0; grid-row: 1 / 3; align-self: center; }
+  .card h3 { margin-bottom: 2px; }
+  .contact-links { font-size: 15px; }
+  .contact-sep { display: none; }
+  .contact-links a { display: block; line-height: 2.2; }
+  .btn-primary,
+  .btn-outline {
+    padding: 10px 22px;
+    font-size: 13px;
+  }
+}

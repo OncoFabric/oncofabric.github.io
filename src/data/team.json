@@ -67,5 +67,16 @@
       "scholar": "https://scholar.google.com/citations?user=BIj-D18AAAAJ&hl=en",
       "website": ""
     }
+  },
+  {
+    "name": "Muhammad Maaz",
+    "title": "",
+    "photo": "/assets/images/maaz.jpg",
+    "bio": "Machine Learning Engineer at Moffitt Cancer Center. Builds and deploys clinical NLP pipelines, speech processing systems, and production MLOps infrastructure for oncology AI. MS in Electrical & Computer Engineering, Rowan University, where his thesis introduced a novel evaluation metric for safety-critical ASR systems.",
+    "links": {
+      "linkedin": "",
+      "scholar": "",
+      "website": ""
+    }
   }
 ]

@@ -25,8 +25,18 @@ import team from '../data/team.json';
     <!-- Team Section -->
     <section class="team-section" data-animate>
       <SectionLabel text="Our Team" variant="teal" />
+      <div class="team-lead">
+        <TeamCard
+          name={team[0].name}
+          title={team[0].title}
+          photo={team[0].photo}
+          photoPosition={team[0].photoPosition}
+          bio={team[0].bio}
+          links={team[0].links}
+        />
+      </div>
       <div class="team-grid">
-        {team.map(member => (
+        {team.slice(1).map(member => (
           <TeamCard
             name={member.name}
             title={member.title}
@@ -67,18 +77,63 @@ import team from '../data/team.json';
     color: var(--text-secondary);
     margin-bottom: 14px;
   }
-  .team-grid {
+  .team-lead {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-top: 8px;
+    margin-bottom: 20px;
+  }
+  .team-lead :global(.team-card) {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    align-items: center;
+    text-align: left;
+    padding: 32px 36px;
+  }
+  .team-lead :global(.team-photo) {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 0;
+    justify-self: center;
+  }
+  .team-lead :global(.team-links) {
+    justify-content: flex-start;
+  }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 
   @media (max-width: 960px) {
     .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .team-lead :global(.team-card) {
+      grid-template-columns: 160px 1fr;
+      gap: 24px;
+      padding: 24px 28px;
+    }
+    .team-lead :global(.team-photo) {
+      width: 150px;
+      height: 150px;
+    }
   }
   @media (max-width: 768px) {
     .page-headline { font-size: 28px; }
     .team-grid { grid-template-columns: 1fr; }
+    .team-lead :global(.team-card) {
+      grid-template-columns: 1fr;
+      gap: 0;
+      text-align: center;
+      padding: 28px 24px;
+    }
+    .team-lead :global(.team-photo) {
+      margin-bottom: 16px;
+    }
+    .team-lead :global(.team-links) {
+      justify-content: center;
+    }
   }
 </style>

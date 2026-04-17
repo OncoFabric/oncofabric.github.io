@@ -88,8 +88,9 @@ import team from '../data/team.json';
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: 200px 1fr;
-    gap: 32px;
-    align-items: center;
+    grid-template-rows: auto auto 1fr auto;
+    column-gap: 36px;
+    row-gap: 6px;
     text-align: left;
     padding: 32px 36px;
   }
@@ -97,7 +98,23 @@ import team from '../data/team.json';
     width: 180px;
     height: 180px;
     margin-bottom: 0;
+    grid-column: 1;
+    grid-row: 1 / -1;
+    align-self: center;
     justify-self: center;
+  }
+  .team-lead :global(.team-name),
+  .team-lead :global(.team-title),
+  .team-lead :global(.team-bio),
+  .team-lead :global(.team-links) {
+    grid-column: 2;
+  }
+  .team-lead :global(.team-name) {
+    align-self: end;
+  }
+  .team-lead :global(.team-bio) {
+    align-self: start;
+    margin-bottom: 0;
   }
   .team-lead :global(.team-links) {
     justify-content: flex-start;

@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
+import posts from '../../data/blog.json';
+
+const sortedPosts = [...posts].sort((a, b) => b.date.localeCompare(a.date));
+
+const formatDate = (iso: string) => {
+  const d = new Date(iso + 'T00:00:00Z');
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+};
+---
+
+<BaseLayout title="Blog — OncoFabric" description="Writing from the OncoFabric team on multimodal AI, clinical intelligence, and oncology research.">
+  <div class="page-content">
+
+    <section class="blog-header" data-animate>
+      <SectionLabel text="Writing" variant="teal" />
+      <h1 class="page-headline">Blog</h1>
+      <p class="page-subtitle">Notes from our work on multimodal AI, clinical intelligence, and what we're learning along the way.</p>
+    </section>
+
+    <div class="blog-list" data-animate>
+      {sortedPosts.map(post => (
+        <a href={`/blog/${post.slug}/`} class="blog-card">
+          <div class="blog-meta">
+            <span class="blog-tag">{post.tag}</span>
+            <span class="blog-dot"></span>
+            <span>{formatDate(post.date)}</span>
+            <span class="blog-dot"></span>
+            <span>{post.readTime}</span>
+          </div>
+          <h2 class="blog-title">{post.title}</h2>
+          <p class="blog-summary">{post.summary}</p>
+          <span class="blog-arrow">Read post <span class="arrow">&rarr;</span></span>
+        </a>
+      ))}
+    </div>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .blog-header {
+    margin-bottom: 28px;
+  }
+  .page-headline {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .page-subtitle {
+    font-size: var(--text-base);
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 640px;
+  }
+  .blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .blog-card {
+    display: block;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .blog-card:hover {
+    border-color: var(--teal);
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+  .blog-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .blog-tag {
+    color: var(--teal);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .blog-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--text-tertiary);
+    opacity: 0.6;
+  }
+  .blog-title {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+  .blog-summary {
+    font-size: var(--text-base);
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+  }
+  .blog-arrow {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--teal);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .blog-card:hover .arrow {
+    transform: translateX(3px);
+  }
+  .arrow {
+    transition: transform 0.2s;
+    display: inline-block;
+  }
+
+  @media (max-width: 768px) {
+    .page-headline { font-size: 28px; }
+    .blog-card { padding: 18px 18px; }
+    .blog-title { font-size: 19px; }
+  }
+</style>

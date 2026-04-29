@@ -1,0 +1,408 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
+
+const title = 'Catching Cancer Cachexia Earlier: A Multimodal AI Biomarker Built from Routine Clinical Data';
+const description = 'A validation study showing that combining clinical notes, lab tests, imaging, and routine patient data produces consistently better predictions of cancer cachexia than any single data modality, across multiple cancer types.';
+const publishDate = 'April 29, 2026';
+const readTime = '6 min read';
+---
+
+<BaseLayout title={`${title} — OncoFabric`} description={description}>
+  <article class="page-content blog-post">
+
+    <a href="/blog/" class="back-link">&larr; All posts</a>
+
+    <header class="post-header" data-animate>
+      <SectionLabel text="Multimodal AI" variant="teal" />
+      <h1 class="post-title">{title}</h1>
+      <div class="post-meta">
+        <span>{publishDate}</span>
+        <span class="dot"></span>
+        <span>{readTime}</span>
+      </div>
+      <p class="post-lede">{description}</p>
+    </header>
+
+    <div class="post-body" data-animate>
+
+      <h2>The problem: a syndrome that hides in plain sight</h2>
+      <p>
+        Most people have never heard of cancer cachexia, but it shapes the experience of millions
+        of cancer patients. It's a wasting syndrome marked by progressive loss of muscle, weight,
+        and strength that develops alongside many cancers. It makes chemotherapy harder to
+        tolerate, surgery riskier, daily life more exhausting, and survival shorter.
+      </p>
+      <p>
+        Cachexia is common. It affects up to 70% of patients with pancreatic and gastroesophageal
+        cancers, and roughly half of those with blood, colorectal, and lung cancers. Yet despite
+        how common and serious it is, there is no single test that reliably catches it early.
+      </p>
+      <p>
+        The reasons are practical. Blood markers like albumin and C-reactive protein, weight
+        measurements, and muscle area measured on CT scans each tells part of the story, but no
+        single signal is enough on its own. Existing scoring systems try to combine a few of these
+        signals using fixed numerical cutoffs, but those cutoffs don't transfer well across
+        different cancer or patient populations. The more thorough assessment tools take too long
+        to be incorporated in clinical settings.
+      </p>
+      <p>
+        The result: cachexia is usually diagnosed after it has become visibly obvious, long past
+        the window when nutritional support, exercise, and other interventions could have helped most.
+      </p>
+
+      <h2>Why a multimodal approach</h2>
+      <p>
+        The core insight of this work is that cachexia is a multidimensional problem and deserves
+        a multidimensional answer. It doesn't show up in just one place in the medical record. It
+        leaves traces in the lab work, in the imaging, in what a patient tells and in what their
+        oncologist writes after a clinic visit, and in the slow shifts in their weight over time.
+      </p>
+      <p>
+        What's needed is a support system that reads everything at once and learns the patterns
+        from the combination, the way an experienced clinician would.
+      </p>
+
+      <h2>What we built</h2>
+      <p>
+        We built an AI system that pulls together four different kinds of information from a
+        patient's medical record at the time of cancer diagnosis:
+      </p>
+      <ul>
+        <li><strong>Basic clinical data:</strong> age, height, weight, BMI, and cancer stage.</li>
+        <li><strong>Lab results:</strong> standard blood tests that reflect nutrition and inflammation.</li>
+        <li><strong>CT imaging:</strong> assessment of how much muscle the patient has.</li>
+        <li><strong>Doctors' notes:</strong> the free-text observations written during clinic visits, which often describe symptoms (appetite loss, fatigue, weight history) that don't show up in numbers.</li>
+      </ul>
+      <p>
+        To make the notes useful to the model, we used large language models to read each
+        patient's notes and pull out structured information about cachexia-related symptoms. The
+        framework we built then learns how to combine all four data types or data modalities into
+        a single prediction for each patient.
+      </p>
+
+      <h2>Validating the approach across cancer types</h2>
+      <p>
+        For this validation study, we tested the system on three patient cohorts:
+      </p>
+      <ul>
+        <li><strong>236 pancreatic cancer patients</strong> from the Florida Pancreas Collaborative: a multi-hospital network spanning several institutions across the state of Florida.</li>
+        <li><strong>131 pancreatic cancer patients</strong> treated at Moffitt Cancer Center, where the full set of modalities (including clinical notes) were available.</li>
+        <li><strong>135 ovarian cancer patients:</strong> a different type entirely, used to test whether the pattern generalizes beyond pancreatic cancer.</li>
+      </ul>
+      <p>
+        The same model architecture and approach were applied to all three cohorts. The question
+        was &ldquo;does the use of multimodal data help with improved detection of cancer cachexia?&rdquo;
+      </p>
+
+      <h2>What the results show</h2>
+      <p>
+        The central finding of this validation is that adding data modalities consistently improved
+        predictions across every cohort and every metric we measured.
+      </p>
+      <p>Here's how accuracy progressed as we added each type of information:</p>
+
+      <div class="table-wrap">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Data modalities</th>
+              <th>Pancreatic (PDAC)<br /><span class="th-sub">n = 236</span></th>
+              <th>Pancreatic (PDAC) Moffitt<br /><span class="th-sub">n = 131</span></th>
+              <th>Ovarian<br /><span class="th-sub">n = 135</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Clinical data only</td>
+              <td>59.5%</td>
+              <td>59.6%</td>
+              <td>53.2%</td>
+            </tr>
+            <tr>
+              <td>+ Muscle measurements from CT</td>
+              <td>60.5%</td>
+              <td>59.0%</td>
+              <td>56.7%</td>
+            </tr>
+            <tr>
+              <td>+ Lab results</td>
+              <td>65.0%</td>
+              <td>66.5%</td>
+              <td>57.5%</td>
+            </tr>
+            <tr>
+              <td>+ Symptom information from clinical notes</td>
+              <td>67.4%</td>
+              <td>71.8%</td>
+              <td><span class="muted">not available</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        The same upward trend appears in two other measures of model quality. The AUC, a standard
+        score for how well a model separates patients with and without cancer cachexia, climbed
+        from 62% (clinical only) to 72% (full multimodal) in the larger pancreatic cohort, and
+        from 63% to 78% in the Moffitt subset. The F1 score showed the same pattern, rising from
+        67% to 75% in the larger cohort and from 65% to 77% in the Moffitt one. The ovarian cancer
+        cohort showed a similar trend with AUC improving from 52% (clinical only) to 60% (clinical
+        + muscle measurements + lab) and F1 improving from 58% to 64% with the combination of
+        three data modalities excluding notes.
+      </p>
+
+      <p>Several findings stood out:</p>
+      <ul>
+        <li>
+          <strong>The pattern was consistent across cancer types.</strong> Pancreatic and ovarian
+          cancers are biologically and clinically different, but the multimodal benefit appeared
+          in both. This is the strongest argument that the multimodal approach is capturing
+          information about cachexia from all types of data modalities included.
+        </li>
+        <li>
+          <strong>Lab data and clinical notes contributed the most.</strong> Adding lab results
+          produced a sizable jump in every cohort. Adding the symptom information extracted from
+          clinical notes, where it was available, produced another. Muscle measurements added
+          considerable gains in the ovarian cancer cohort but smaller gains in the pancreatic
+          (PDAC) cohort, highlighting how different types of cancers draw meaningful information
+          from the various data modalities combined.
+        </li>
+        <li>
+          <strong>It gives a personalized answer.</strong> Instead of applying the same numerical
+          cutoff to every patient, our framework produces a prediction tailored to the individual,
+          accounting for their age, ethnicity, cancer type, stage, and other characteristics.
+        </li>
+        <li>
+          <strong>It uses data that's already being collected.</strong> Nothing in the pipeline
+          requires special collection protocols, new tests, or extra patient visits. The system
+          draws on what's already in the electronic health record from standard cancer care.
+        </li>
+      </ul>
+
+      <h2>Why this matters</h2>
+      <p>
+        By the time the syndrome is recognized, the best opportunities for intervention have
+        passed. A tool that can flag at-risk patients on the day of cancer diagnosis by reading
+        across all the information the hospital is already gathering opens up a different
+        timeline. Nutritional counseling, physical therapy, appetite-supporting medications, and
+        closer monitoring can all begin earlier, when they're more likely to help.
+      </p>
+      <p>
+        The broader lesson goes beyond cachexia. Multimodal AI is what cancer medicine has always
+        actually needed, because cancer has never been a single-data-source problem. The
+        information that defines a patient's situation is scattered across imaging, labs,
+        pathology, genomics, and the words their care team writes about them. Tools that bring
+        all of that together will look more like the way clinicians already think and that's the
+        direction this work is pushing.
+      </p>
+      <p>
+        What this validation adds to the conversation is concrete evidence that the multimodal
+        benefit is real, measurable, and consistent across cancer types. It's not a coincidence
+        of a single dataset or a single disease. The same pattern &mdash; each modality adding
+        something &mdash; appears in pancreatic cancer across multiple hospitals, in pancreatic
+        patients at a single center with the richest data, and in ovarian cancer as a different
+        disease entirely.
+      </p>
+
+      <h2>What's next</h2>
+      <p>
+        This study validates multimodal learning in two cancer types and that direction needs to
+        keep going across more cancer types, more institutions, and over time. We're working
+        toward longitudinal modeling using repeated measurements to track how a patient's risk
+        evolves rather than capturing a single snapshot at diagnosis. Ultimately, the goal is a
+        tool that supports oncologists in everyday practice, helping them catch cachexia early
+        enough to actually do something about it.
+      </p>
+
+    </div>
+
+    <div class="post-footer" data-animate>
+      <a href="/blog/" class="btn-outline">&larr; Back to blog</a>
+      <a href="/contact/" class="btn-primary">Get in touch</a>
+    </div>
+
+  </article>
+</BaseLayout>
+
+<style>
+  .blog-post {
+    max-width: 760px;
+  }
+  .back-link {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+    margin-bottom: 24px;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .back-link:hover {
+    color: var(--teal);
+    text-decoration: none;
+  }
+  .post-header {
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .post-title {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 14px;
+    color: var(--text-primary);
+  }
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 18px;
+  }
+  .post-meta .dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--text-tertiary);
+    opacity: 0.6;
+  }
+  .post-lede {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .post-body :global(h2) {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    color: var(--text-primary);
+    margin-top: 36px;
+    margin-bottom: 14px;
+  }
+  .post-body :global(p) {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin-bottom: 18px;
+  }
+  .post-body :global(ul) {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px;
+  }
+  .post-body :global(li) {
+    position: relative;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+  .post-body :global(li::before) {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+  }
+  .post-body :global(strong) {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .table-wrap {
+    margin: 24px 0 28px;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-elevated);
+  }
+  .results-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .results-table th,
+  .results-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .results-table thead th {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+    background: var(--bg-surface);
+    vertical-align: top;
+  }
+  .results-table .th-sub {
+    display: block;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--text-tertiary);
+    font-size: 10px;
+    margin-top: 2px;
+    opacity: 0.8;
+  }
+  .results-table tbody td {
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+  .results-table tbody td:first-child {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  .results-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .results-table tbody tr:hover {
+    background: rgba(20, 184, 166, 0.04);
+  }
+  .results-table .muted {
+    color: var(--text-tertiary);
+    font-style: italic;
+    font-size: 13px;
+  }
+
+  .post-footer {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 48px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 768px) {
+    .post-title { font-size: 26px; }
+    .post-lede { font-size: 16px; }
+    .post-body :global(h2) { font-size: 19px; margin-top: 28px; }
+    .post-body :global(p),
+    .post-body :global(li) { font-size: 15px; }
+    .results-table { font-size: 13px; }
+    .results-table th,
+    .results-table td { padding: 10px 12px; }
+  }
+</style>

@@ -14,9 +14,21 @@ const isActive = (href: string) =>
 
 <header class="site-header">
   <div class="header-inner">
-    <a href="/" class="logo">
-      <span class="bold">Onco</span><span class="light">Fabric</span><span class="cite">&#185;</span>
-    </a>
+    <div class="header-brand">
+      <a href="/" class="logo">
+        <span class="bold">Onco</span><span class="light">Fabric</span><span class="cite">&#185;</span>
+      </a>
+      <span class="header-affiliation">
+        <span class="affiliation-divider"></span>
+        <img
+          src="/assets/mcc/Moffitt_Cancer_Center_idoxG5x-cl_1.svg"
+          alt="Part of Moffitt Cancer Center"
+          class="header-moffitt-logo"
+          width="197"
+          height="52"
+        />
+      </span>
+    </div>
     <nav class="nav-desktop">
       {navLinks.map(link => (
         <a href={link.href} class:list={['nav-link', { active: isActive(link.href) }]}>
@@ -59,11 +71,31 @@ const isActive = (href: string) =>
     align-items: center;
     justify-content: space-between;
   }
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
   .logo {
     font-size: 20px;
     letter-spacing: -0.03em;
     text-decoration: none;
     color: var(--text-primary);
+  }
+  .header-affiliation {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .affiliation-divider {
+    width: 1px;
+    height: 20px;
+    background: var(--border-strong);
+  }
+  .header-moffitt-logo {
+    height: 18px;
+    width: auto;
+    opacity: 0.8;
   }
   .logo .bold { font-weight: 700; }
   .logo .light { font-weight: 300; }
@@ -137,6 +169,7 @@ const isActive = (href: string) =>
 
   @media (max-width: 768px) {
     .header-inner { padding: 14px 20px; }
+    .header-affiliation { display: none; }
     .nav-desktop { display: none; }
     .hamburger { display: flex; }
     .nav-mobile { padding: 0 20px 16px; }

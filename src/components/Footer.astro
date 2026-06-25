@@ -10,6 +10,16 @@
           <span class="bold">Onco</span><span class="light">Fabric</span><span class="cite">&#185;</span>
         </a>
         <p class="footer-tagline">The trusted clinical intelligence layer for humans & AI.</p>
+        <div class="footer-affiliation">
+          <span class="affiliation-label">Part of</span>
+          <img
+            src="/assets/mcc/Moffitt_Cancer_Center_idoxG5x-cl_1.svg"
+            alt="Moffitt Cancer Center"
+            class="moffitt-logo"
+            width="197"
+            height="52"
+          />
+        </div>
       </div>
 
       <!-- Research -->
@@ -18,9 +28,9 @@
         <a href="/publications/">Publications</a>
       </div>
 
-      <!-- Company -->
+      <!-- OncoFabric -->
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4>OncoFabric</h4>
         <a href="/about/">About</a>
         <a href="/contact/">Contact</a>
       </div>
@@ -78,6 +88,25 @@
     color: var(--text-tertiary);
     line-height: 1.6;
     max-width: 280px;
+  }
+  .footer-affiliation {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .affiliation-label {
+    font-size: 11px;
+    font-family: var(--mono);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+  }
+  .moffitt-logo {
+    height: 28px;
+    width: auto;
+    opacity: 0.85;
   }
   .footer-col {
     display: flex;
